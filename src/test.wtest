@@ -1,0 +1,29 @@
+import example.*
+
+test "pikachu entrena" {
+	const pikachu = new Electrico(nombre="pikachu")
+	
+	pikachu.entrenar()
+	
+	assert.equals(140,pikachu.poder())
+}
+
+test "charizard entrena"{
+	const charizard = new Fuego()
+	
+	charizard.entrenar()
+	
+	assert.equals(1600,charizard.poder())
+}
+
+test "entrenador poder total" {
+	
+	const ashKetchum = new Entrenador()
+	
+	ashKetchum.agregarPokemon(new Fuego())
+	ashKetchum.agregarPokemon(new Fuego())
+	ashKetchum.agregarPokemon(new Fuego())
+	
+	assert.equals(4500,ashKetchum.poderTotal())
+}
+
